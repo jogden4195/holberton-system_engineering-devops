@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#Gives information about the holbertonschool file
+if [ ! -e holbertonschool ]; then
+   echo "holbertonschool file does not exist"
+else
+   echo "holbertonschool file exits"
+   if [ -s holbertonschool ]; then
+      echo "holbertonschool file is not empty"
+   else
+      echo "holbertonschool file is empty"
+   fi
+   if [ -f holbertonschool ]; then
+      echo "holbertonschool is a regular file"
+   fi
+fi
