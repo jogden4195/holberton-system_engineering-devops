@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Loops through 1-10 and displays bad luck for the 4th loop and good luck for the 8the loop; displays holberton school for the other loops
+i="1"
+while [ $i -lt "21" ]; do
+echo $i
+if [ $i -eq "4" ]; then
+echo "bad luck from China"
+fi
+if [ $i -eq "9" ]; then
+echo "bad luck from Japan"
+fi
+if [ $i -eq "17" ]; then
+echo "bad luck from Italy"
+fi
+((i++))
+done
