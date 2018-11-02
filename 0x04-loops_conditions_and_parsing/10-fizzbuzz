@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Fizzbuzz test in Bash
+i="1"
+while [ $i -lt "101" ]; do
+   if [ $((i % 3)) -eq "0" ]; then
+      if [ $((i % 5)) -eq "0" ]; then
+         echo -n "FizzBuzz "
+      else
+	 echo -n "Fizz "
+      fi
+   elif [ $((i % 5)) -eq "0" ]; then
+      if [ $i -eq "100" ]; then
+         echo "Buzz"
+      else
+         echo -n "Buzz "
+      fi
+   else
+      echo -n "$i "
+   fi
+   ((i++))
+done
