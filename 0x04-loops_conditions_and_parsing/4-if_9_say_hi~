@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 #Prints out "Holberton School" in a while loop and "Hi" on its 9th iteration
-i="1"
-while [ $i -ne "11" ]; do
-echo "Holberton School"
+i="0"
+while [ $i -ne "10" ]; do
 if [ $i -eq "9" ]; then
 echo "Hi"
+fi
+if [ $i -ne "9" ]; then
+echo "Holberton School"
 fi
 ((i++))
 done
