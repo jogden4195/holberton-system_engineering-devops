@@ -6,7 +6,7 @@ while [ $i -lt "11" ]; do
       echo "bad luck"
    elif [ $i -eq "8" ]; then
       echo "good luck"
-   elif [ $i -ne "4" -a $i -ne "8" ]; then
+   else
       echo "Holberton School"
    fi
    ((i++))
