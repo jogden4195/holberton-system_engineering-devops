@@ -2,12 +2,12 @@
 #Loops through 1-10 and displays bad luck for the 4th loop and good luck for the 8the loop; displays holberton school for the other loops
 i="1"
 while [ $i -lt "11" ]; do
-if [ $i -eq "4" ]; then
-echo "bad luck"
-elif [ $i -eq "8" ]; then
-echo "good luck"
-else [ $i -ne "4" -a $i -ne "8" ]; then
-echo "Holberton School"
-fi
-((i++))
+   if [ $i -eq "4" ]; then
+      echo "bad luck"
+   elif [ $i -eq "8" ]; then
+      echo "good luck"
+   elif [ $i -ne "4" -a $i -ne "8" ]; then
+      echo "Holberton School"
+   fi
+   ((i++))
 done
