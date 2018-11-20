@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #This function pings an IP address passed as an arg
 ARGS=("$@")
-if [ -z "$ARGS" ]; then
-    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
-else
+if [ ${ARGS[0]} ]; then
     ping ${ARGS[0]}
+else
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 fi
