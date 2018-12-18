@@ -1,0 +1,6 @@
+Host holberton_server
+    HostName 35.229.84.121
+    Port 22
+    User ubuntu
+    IdentityFile ~/.ssh/holberton
+    PasswordAuthentication no
