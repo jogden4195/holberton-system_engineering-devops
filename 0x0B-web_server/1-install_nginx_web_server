@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Installs and configures a nginx web server on our web-01 server
+sudo apt-get -y install nginx
+echo "holberton school" | sudo tee /usr/share/nginx/html/index.html
