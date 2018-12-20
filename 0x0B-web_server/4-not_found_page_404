@@ -4,4 +4,5 @@ sudo apt-get update
 sudo apt-get -y install nginx
 sudo service nginx start
 echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sed -i '/#error_page 404 /404.html;/c\error_page 404 /404.html;' /etc/nginx/sites-enabled/default 
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
