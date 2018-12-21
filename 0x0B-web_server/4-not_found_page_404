@@ -7,3 +7,4 @@ echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
 sudo sed -i 's/#error_page 404/error_page 404/' /etc/nginx/sites-enabled/default
 sudo touch /usr/share/nginx/html/404.html 
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
+sudo service nginx restart
