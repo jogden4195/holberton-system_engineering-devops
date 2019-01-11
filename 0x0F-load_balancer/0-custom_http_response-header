@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
 #Configues a brand new Ubuntu machine
+#Installing nginx
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo service nginx start
 echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+
+#Handling redirect
 redirection="location \/redirect_me \{\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t\}"
 filename="/etc/nginx/sites-available/default"
 sed -i '/^\tserver_name localhost;/a\\n\t'"$redirection"'' $filename
+
+#Handling 404 page
 sudo sed -i 's/#error_page 404/error_page 404/' /etc/nginx/sites-enabled/default
 sudo touch /usr/share/nginx/html/404.html 
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
-HOST="$hostname"
-sudo sed -i "73iadd_header X-Served-By $HOST;" /etc/nginx/nginx.conf
+
+#Adding Header
+host="$hostname"
+sudo sed -i '23i add_header X-Served-By $host;' /etc/nginx/sites-available/default 
 sudo service nginx restart
