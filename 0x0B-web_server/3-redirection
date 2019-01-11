@@ -2,7 +2,8 @@
 #Installs and configures a nginx web server on our web-01 server
 sudo apt-get update
 sudo apt-get -y install nginx
-sudo service nginx start
 echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
-sudo sed -i '29s/.*/rewrite /redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-enabled/default
+redirection="location \/redirect_me \{\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t\}"
+filename="/etc/nginx/sites-available/default"
+sed -i '/^\tserver_name localhost;/a\\n\t'"$redirection"'' $filename
 sudo service nginx restart
