@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Allows our Nginx installation to listen to port 80
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
