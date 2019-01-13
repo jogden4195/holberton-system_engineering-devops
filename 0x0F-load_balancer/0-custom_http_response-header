@@ -17,6 +17,6 @@ sudo touch /usr/share/nginx/html/404.html
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
 
 #Adding Header
-host="$hostname"
-sudo sed -i '23i add_header X-Served-By $host;' /etc/nginx/sites-available/default 
+sudo sed -i '/^\tserver_name localhost;/a\\n\tadd_header X-Served-By '"$HOSTNAME;\n" "/etc/nginx/sites-available/default"
+
 sudo service nginx restart
