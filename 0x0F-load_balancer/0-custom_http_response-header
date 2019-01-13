@@ -8,8 +8,7 @@ echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
 
 #Handling redirect
 redirection="location \/redirect_me \{\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t\}"
-filename="/etc/nginx/sites-available/default"
-sed -i '/^\tserver_name localhost;/a\\n\t'"$redirection"'' $filename
+sudo sed -i '/^\tserver_name localhost;/a\\n\t'"$redirection"'' /etc/nginx/sites-available/default
 
 #Handling 404 page
 sudo sed -i 's/#error_page 404/error_page 404/' /etc/nginx/sites-enabled/default
@@ -17,6 +16,6 @@ sudo touch /usr/share/nginx/html/404.html
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
 
 #Adding Header
-sudo sed -i '/^\tserver_name localhost;/a\\n\tadd_header X-Served-By '"$HOSTNAME;\n" "/etc/nginx/sites-available/default"
+sudo sed -i '/^\tserver_name localhost;/a\\n\tadd_header X-Served-By '"$HOSTNAME;\n" /etc/nginx/sites-available/default
 
 sudo service nginx restart
