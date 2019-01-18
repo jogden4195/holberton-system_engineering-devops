@@ -5,4 +5,4 @@ pkill apache2
 chown nginx:nginx /etc/nginx/nginx.conf
 printf 'user nginx;' | sudo tee -a /etc/nginx/nginx.conf
 sudo sed -i 's/\<80\>/&80/' /etc/nginx/sites-enabled/default
-sudo service nginx restart
+sudo -u nginx service nginx restart
