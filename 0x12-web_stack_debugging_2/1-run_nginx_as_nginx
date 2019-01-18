@@ -2,6 +2,7 @@
 #Reconfigures nginx so it is running as nginx user and listens on all active
 #IPs on port 8080
 pkill apache2
+chown nginx:nginx /etc/nginx/nginx.conf
 printf 'user nginx;' | sudo tee -a /etc/nginx/nginx.conf
 sudo sed -i 's/\<80\>/&80/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
