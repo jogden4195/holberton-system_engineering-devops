@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+#Configures ufw firewall
 sudo apt-get install ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
