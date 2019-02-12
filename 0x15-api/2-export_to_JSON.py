@@ -25,8 +25,8 @@ if __name__ == "__main__":
     for task in e_todos:
         new_dict = {}
         new_dict['username'] = name
-        new_dict['task_completed_status'] = task['completed']
-        new_dict['task_title'] = task['title']
+        new_dict['completed'] = task['completed']
+        new_dict['task'] = task['title']
         json_todos.append(new_dict)
     json_dict = {}
     json_dict[eid] = json_todos
