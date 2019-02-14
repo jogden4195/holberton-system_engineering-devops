@@ -17,7 +17,7 @@ def top_ten(subreddit):
         '(KHTML, like Gecko) '
         'Chrome/39.0.2171.95 Safari/537.36',
         'Content-Type': 'application/json'}
-    url = 'http://www.reddit.com/r/' + subreddit + '/hot.json'
+    url = 'http://www.reddit.com/r/' + subreddit + '/hot?sort=hot&limit=10'
     data = requests.get(url, headers=headers, allow_redirects=False)
     if data.status_code != 200:
         print('None')
@@ -27,5 +27,5 @@ def top_ten(subreddit):
     if len(posts) == 0:
         print('None')
         return
-    for p in posts[:9]:
+    for p in posts:
         print(p['data']['title'])
