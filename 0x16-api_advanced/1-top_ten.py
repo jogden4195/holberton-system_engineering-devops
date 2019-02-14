@@ -18,7 +18,7 @@ def top_ten(subreddit):
         'Chrome/39.0.2171.95 Safari/537.36',
         'Content-Type': 'application/json'}
     url = 'http://www.reddit.com/r/' + subreddit + '/hot.json'
-    data = requests.get(url, headers=headers)
+    data = requests.get(url, headers=headers, allow_redirects=False)
     if data.status_code != 200:
         print('None')
         return
