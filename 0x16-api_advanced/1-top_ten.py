@@ -2,7 +2,6 @@
 """
 Module for top_ten
 """
-import requests
 
 
 def top_ten(subreddit):
@@ -10,6 +9,8 @@ def top_ten(subreddit):
     Queries the Reddit API and prints the titles of the first 10
     hot posts listed for a given subreddit
     """
+    import requests
+
     headers = {
         'User-Agent': 'Mozilla/5.0 '
         '(Macintosh; Intel Mac OS X 10_10_1) '
