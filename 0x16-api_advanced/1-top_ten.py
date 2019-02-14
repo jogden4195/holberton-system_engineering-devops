@@ -19,7 +19,7 @@ def top_ten(subreddit):
         'Content-Type': 'application/json'}
     url = 'http://www.reddit.com/r/' + subreddit + '/hot?sort=hot&limit=10'
     data = requests.get(url, headers=headers, allow_redirects=False)
-    if data.status_code != 200:
+    if data.status_code != requests.codes.ok:
         print('None')
         return
     data_json = data.json()
