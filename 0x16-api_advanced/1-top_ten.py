@@ -11,15 +11,13 @@ def top_ten(subreddit):
     hot posts listed for a given subreddit
     """
     headers = {
-        'User-Agent': 'Mozilla/5.0 '
-        '(Macintosh; Intel Mac OS X 10_10_1) '
-        'AppleWebKit/537.36 '
-        '(KHTML, like Gecko) '
-        'Chrome/39.0.2171.95 Safari/537.36',
+        'User-Agent': 'Someone',
         'Content-Type': 'application/json'}
-    url = 'http://www.reddit.com/r/' + subreddit + '/hot?sort=hot&limit=10'
-    data = requests.get(url, headers=headers, allow_redirects=False)
-    if data.status_code != requests.codes.ok:
+    url = 'http://www.reddit.com/r/' + subreddit + '/hot.json'
+    data = requests.get(url, headers=headers)
+    if data.status_code != 200:
+        print(data.status_code)
+        print('Hey!')
         print('None')
         return
     data_json = data.json()
@@ -27,5 +25,5 @@ def top_ten(subreddit):
     if len(posts) == 0:
         print('None')
         return
-    for p in posts:
+    for p in posts[:9]:
         print(p['data']['title'])
