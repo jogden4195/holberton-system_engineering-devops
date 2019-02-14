@@ -16,8 +16,6 @@ def top_ten(subreddit):
     url = 'http://www.reddit.com/r/' + subreddit + '/hot.json'
     data = requests.get(url, headers=headers)
     if data.status_code != 200:
-        print(data.status_code)
-        print('Hey!')
         print('None')
         return
     data_json = data.json()
